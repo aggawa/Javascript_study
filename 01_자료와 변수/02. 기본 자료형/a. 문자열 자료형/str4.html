@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         //문자열 연산
+         var str1 = '안녕하세요' + '반갑습니다.'
+         console.log(str1) // 문자 + 문자 가능
+
+         var str2 = '저는' + 25 + '살 입니다.'
+         console.log(str2) // 문자 + 숫자 -> 숫자를 문자로 인식
+
+         var legion = '인천'
+         var str3 = '저는 ' + legion + '에 거주중임'
+         console.log(str3)
+
+         var num = '1' + '3'
+         console.log(num) // 문자 + 문자여서 13이라고 출력됨
+
+         var num = 1 + '3'
+         console.log(num) // 문자 + 숫자 = 문자
+
+         var num = 1 + 3 + '4'
+         console.log(num) // 따옴표가 있으면 문자라고 해석
+         //앞의 숫자는 연산 후 뒤에 문자가 나온 시점부터 문자가 됨
+
+         var num = '1' + 3 + '1'
+         console.log(num) // 131
+         // ↑↓ 둘다 마찬가지로 문자가 포함되기에 아싸리 문자열로 연산함
+         var num = '3' + 3 + 1
+         console.log(num) // 331
+      </script>
+   </body>
+</html>
