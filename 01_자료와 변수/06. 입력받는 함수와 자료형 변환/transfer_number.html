@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let a = Number('52') // 숫자타입으로 변경
+         console.log(a)
+         console.log(typeof a)
+
+         let b = Number('hi') // 그냥 찐 문자열이라 숫자로 변경 불가
+         console.log(b) // 이런 경우는 NaN 으로 출력됨
+         console.log(typeof b) // NaN: Not A Number 의 약자 숫자가 아니란 뜻임
+         // typeof를 보면 Nomber라고 나오는데 위에서 숫자타입으로 바꾼건 맞지만 숫자는 아님 그런 느낌
+      </script>
+   </body>
+</html>

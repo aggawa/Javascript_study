@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         console.log(10 <= 12 && 5 < 8)
+         console.log(10 <= 12 && 5 > 8)
+         console.log(10 > 12 && 5 < 8)
+         console.log(10 > 12 && 5 > 8)
+
+         console.log('-------------------')
+
+         console.log(10 <= 12 || 5 < 8)
+         console.log(10 <= 12 || 5 > 8)
+         console.log(10 > 12 || 5 < 8)
+         console.log(10 > 12 || 5 > 8)
+
+         console.log('-------------------')
+
+         console.log(10 <= 12 || (5 < 8 && 10 < 1))
+         console.log((10 <= 12 || 5 < 8) && 10 < 1)
+         console.log(10 <= 12 || (5 < 8 && 10 < 1))
+         // 첫번째 괄호는 프리티어 때문에 자동으로 생기는 것임
+         // &&의 우선순위가 ||보다 높기 때문에 먼저 연산함
+         // ||가 먼저 연산되게 하고싶으면 ()괄호로 묶으면 됨
+         // 즉 괄호()가 &&보다 우선순위가 높다는거지
+
+         console.log('------------------')
+
+         console.log((10 <= 12 || 10 < 20) && (5 < 8 || 10 < 1))
+         console.log(10 <= 12 || 10 < 20 || (5 < 8 && 10 < 1))
+         //우선순위 잘 따져서 왼쪽부터 느낌알제?
+      </script>
+   </body>
+</html>

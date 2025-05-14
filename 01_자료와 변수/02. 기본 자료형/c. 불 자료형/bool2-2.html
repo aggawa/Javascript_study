@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 입력할 수 있는 창
+         // 확인시 입력한 값을 변수에 저장
+         // 취소시 null값을 변수에 저장
+         var name = prompt('당신의 이름은?', '전준모')
+         console.log(name)
+
+         if (name) {
+            document.write('내 이름은 ' + name)
+         }
+
+         // prompt는 모든 값을 문자형으로 받아들임
+         // 취소시에도 null값이 아닌 'null'문자형으로 받아들임
+         // null값은 false지만 'null'문자형으로 받아들이기 때문에 ture로 인식됨
+      </script>
+   </body>
+</html>

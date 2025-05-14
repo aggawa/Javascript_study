@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let list = '' // 빈 문자열
+
+         list += '<ul>' // list + <ul> -> list = '<ul>'
+         list += '<li>Hello</li>' // list + <li>Hello</li> -> list = '<ul><li>Hello</li>'
+         list += '<li>Javascript</li>' // list + <li>Javascript</li> -> list = '<ul><li>Hello</li><li>Javascript</li>
+         list += '<li>Python</li>' // 대충 이런식으로 계속 누적됨
+         list += '</ul>'
+
+         console.log(list)
+         document.write(list)
+
+         // 백틱으로 출력하기
+         let list2 = `
+         <ul>
+         <li>Hello2</li>
+         <li>Javascript2</li>
+         <li>Python2</li>
+         </ul>
+         `
+         console.log(list2)
+         document.write(list2)
+      </script>
+   </body>
+</html>

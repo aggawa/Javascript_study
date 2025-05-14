@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         var age = 20
+         var address = '인천'
+
+         console.log('영수의 나이는 ' + age + '살 이고, ' + address + '에 살고 있습니다.')
+
+         console.log(`영수의 나이는 ${age}세 이고, ${address}에 살고 있습니다.`)
+         // ↑ 벡틱 1옆의 ~표시로 표현 (`), 보다 편리하게 나타낼 수 있다.
+
+         console.log('표현식 10 + 10의 값은 ' + (10 + 10) + ' 입니다.')
+         // 문자열과 합쳐져 문자로 바뀌는 것을 방지하기 위하여 괄호()로 묶어서 수식을 사용할 수 있다.
+         console.log(`표현식 10 + 10의 값은 ${10 + 10} 입니다.`)
+         // 간단한 연산도 벡틱을 이용하여 표현할 수 있다.
+      </script>
+   </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 티켓 예매: 한 장만 예매가능 and 오후 15시 ~ 23시 사이 예매가능
+         var ticket = prompt('예매 수량을 입력.')
+         console.log(Number(ticket))
+         console.log(typeof Number(ticket))
+
+         var time = 16
+
+         // var now = new Date() // 날짜 구하기 (지금이요)
+         // console.log(now)
+
+         // var time = now.getHours() // 현재 시간 구하기
+         // console.log(time)
+
+         if (Number(ticket) === 1 && time >= 15 && time <= 23) {
+            document.write('예매가 완료되었습니다.')
+         }
+
+         // Number(값): 해당 값을 숫자 타입으로 바꿔준다.
+         // prompt에서는 모두 문자형으로 인식하니까 이럴때 써주면 유용한 함수임
+         // === <- 값과 타입 모두 비교하는 연산자 ==과는 다른걸 꼭 알아둬야함
+      </script>
+   </body>
+</html>
