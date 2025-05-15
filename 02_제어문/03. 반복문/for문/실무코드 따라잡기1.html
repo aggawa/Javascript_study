@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const items = [
+            ['사과 1kg', '귤 1kg', '바나나 1송이', '오렌지 12개'],
+            [18000, 8000, 5000, 12000],
+         ]
+
+         const itemNames = items[0]
+         const itemPrices = items[1]
+
+         // 과일 목록만 출력
+         let html = `<ul>` // 비어있는 <ul>
+         for (const itemName of itemNames) {
+            // for ~~ of ~~ 리스트 안의 아이템 뽑아오기
+            html += `<li>${itemName}</li>` // <ul>에 <li> itemName이 들어옴
+         }
+         html += `</ul>` //반복문이 끝난 후 <ul> 닫기
+
+         document.write(html)
+         document.write(`<hr />`) // 선 출력 (html에서 하던거 알제)
+
+         let html2 = '<ul>'
+         for (const i in itemNames) {
+            html2 += `<li>${itemNames[i]} 가격: ${itemPrices[i].toLocaleString('ko-KR')}원</li>`
+         }
+         // .toLocaleString('ko-KR'): 원단위 , 찍어주는 함수
+         html += `</ul>`
+         document.write(html2)
+         document.write(`<ht />`)
+      </script>
+   </body>
+</html>

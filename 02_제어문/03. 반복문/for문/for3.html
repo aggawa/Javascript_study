@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const todos = ['우유 구매', '업무 메일 확인하기', '필라테스 수업']
+
+         for (let i = 0; i < todos.length; i++) {
+            // i < todos.length <- 이거 개꿀임 배열 추가해도 코드수정할 필요 없음
+            console.log(`${i + 1}번째 할일: ${todos[i]}`)
+         }
+
+         console.log('')
+
+         // 역순
+         for (let i = todos.length - 1; i >= 0; i--) {
+            console.log(`${i + 1}번째 할일: ${todos[i]}`)
+         }
+      </script>
+   </body>
+</html>

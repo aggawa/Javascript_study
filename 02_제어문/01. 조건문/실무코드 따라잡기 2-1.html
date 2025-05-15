@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const score = Number(prompt('점수를 입력하세요.'))
+
+         if (score >= 0 && score <= 100) {
+            if (score >= 90) {
+               alert('A')
+            } else if (score >= 80) {
+               alert('B')
+            } else if (score >= 70) {
+               alert('C')
+            } else if (score >= 60) {
+               alert('D')
+            } else {
+               alert('F')
+            }
+         } else {
+            alert('제대로 입력하쇼')
+            location.reload()
+         }
+      </script>
+   </body>
+</html>

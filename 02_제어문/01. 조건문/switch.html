@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const input = Number(prompt('숫자를 입력'))
+
+         switch (
+            input % 2 // 변수값 받기
+         ) {
+            case 0: // 변수의 결과가 0이면 실행
+               alert('짝수에요')
+               break
+            case 1: // 변수의 결과가 1이면 실행
+               alert('홀수에요')
+               break
+            default: // 그 외의 경우에 실행
+               alert('숫자가 아님')
+               break
+         }
+      </script>
+   </body>
+</html>

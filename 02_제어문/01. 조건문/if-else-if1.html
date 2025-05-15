@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const date = new Date()
+         const hours = date.getHours()
+         console.log(date)
+         console.log(hours)
+
+         if (hours <= 11) {
+            alert('아침이에요')
+         } else if (hours <= 15) {
+            alert('점심이에요')
+         } else {
+            ;('저녁이에요')
+         }
+      </script>
+   </body>
+</html>

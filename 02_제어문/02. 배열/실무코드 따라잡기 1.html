@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const students = ['김영수', '이지혜', '류상진', '박미나', '서한울']
+
+         // students.splice(2, 1) 간단하게 제거하는 방법이 있다
+         // console.log(students) 하지만 데이터가 많다면 요건 좀 어렵구
+
+         const index = students.indexOf('류상진') // '류상진'의 인덱스 번호를 찾아 index에 저장
+         console.log('류상진의 index:', index) // 저장됐는지 확인하기 위해 출력
+
+         //  const index = students.indexOf('전준모')
+         // 만약 찾는 값이 없다면 -1을 준다.
+
+         // if(index === -1){     인덱스 값이 -1이라면 이런식으로 활용이 가능하다.
+         // alert('해당 학생이 존재하지 않습니다.')}
+
+         students.splice(index, 2) // indexOf로 찾은 '류상진'의 인덱스를 이용해
+         console.log(students) // '류상진'을 제거
+         // 실무에서 데이터가 많을 때 유용하게 쓰인다.
+      </script>
+   </body>
+</html>
