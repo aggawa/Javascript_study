@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 배열안의 숫자 중 최솟값을 구하는 함수
+         function min(array) {
+            let output = array[0]
+            // output에 array[0]을 저장 (가장 처음의 배열)
+
+            // item - 반복변수, 배열의 아이템을 순서대로 반복, 어떤 배열을? array 배열을
+            for (const item of array) {
+               if (output > item) {
+                  //비교를 하고 참이면 output에 해당 아이템을 저장
+                  output = item
+               }
+            }
+            return output // output을 return
+         }
+
+         const testArray = [52, 273, 32, 103, 275, 24, 57]
+         console.log(`최솟갑: ${min(testArray)}`)
+      </script>
+   </body>
+</html>

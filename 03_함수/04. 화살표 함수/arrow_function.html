@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 단순 함수
+         function myFun1(a, b) {
+            return a + b
+         }
+
+         console.log(myFun1(1, 2))
+
+         // 화살표 함수
+         const myFun2 = (a, b) => {
+            return a * b
+         }
+
+         console.log(myFun2(3, 2))
+
+         // 중괄호 생략
+         // 실행코드가 한 줄일때 중괄호 생략 가능
+         const myFun3 = (a, b) => console.log(a + b)
+         myFun3(10, 5)
+
+         // return값이 하나일 때 중괄호와 return 모두 생략 가능
+         const myFun4 = (a, b) => a + b
+         console.log(myFun4(1, 2))
+
+         // JSON객체 데이터를 리턴할 경우 중괄호와 return을 생략하고 괄호를 사용
+         const obj = { a: 'one', b: 'two', c: 'two' } // JSON 객체
+
+         const myFun5 = () => ({ a: 'one', b: 'two', c: 'two' })
+         console.log(myFun5())
+      </script>
+   </body>
+</html>

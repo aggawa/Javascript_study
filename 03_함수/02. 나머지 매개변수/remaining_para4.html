@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function test(first, ...rests) {
+            if (Array.isArray(first)) {
+               console.log(first)
+               console.log('rests 없음: ', rests)
+            } else if (typeof first === 'number') {
+               console.log(first)
+               console.log('rests 있음: ', rests)
+            }
+         }
+         test([52, 273, 32, 103, 275, 24, 57], 100)
+         test(52, 273, 32, 103, 275, 24, 57)
+      </script>
+   </body>
+</html>
