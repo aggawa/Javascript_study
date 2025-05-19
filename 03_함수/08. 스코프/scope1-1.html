@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function vartest() {
+            var a = 2 // 그니까 여기 {} 구역이랑 밖이랑은 다른 세상이라구
+         }
+
+         vartest()
+
+         // 함수 내부에 선언한 지역변수는 함수 내에서만 사용 가능
+         console.log(a)
+      </script>
+   </body>
+</html>

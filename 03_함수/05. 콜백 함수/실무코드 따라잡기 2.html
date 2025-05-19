@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         //  depts 에는 부서명이 저장되어있다.
+         // 개발부를 개발부1, 개발부2... 형태로 다시 저장하는 코드
+
+         const depts = ['개발부', '개발부', '연구부', '개발부', '인사부', '회계부', '마케팅부']
+
+         let i = 0
+
+         const result = depts.map((dept) => {
+            if (dept.indexOf('개발부') !== -1) {
+               i++
+               return dept + i
+            } else {
+               return dept
+            }
+         })
+         console.log(result)
+      </script>
+   </body>
+</html>
