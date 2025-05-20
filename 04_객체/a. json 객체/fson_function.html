@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const iPhone15 = {
+            model: 'iPhone 15',
+            manufacturer: 'Apple',
+            releaseYear: 2023,
+            colors: ['Black', 'Blue', 'Pink', 'Yellow', 'Green'],
+         }
+
+         //  console.log(iPhone15) 콘솔로 찍으면 제대로 나옴
+         document.write(iPhone15) // 이렇게 찍으면 object 로 나오는데 그러면 json을 문자열로 바꿔줘야함
+         document.write('<hr />')
+
+         // JSON -> 문자열 바꾸기
+         const jsonToString1 = JSON.stringify(iPhone15) //
+         document.write(jsonToString1)
+         console.log(jsonToString1) // 콘솔에서는 변환시 정렬이 안되어 지저분해보임
+
+         const jsonToString2 = JSON.stringify(iPhone15, null, 2)
+         // console.log 에서 문자열로 변환시 정렬이 안되어 지저분한걸 처리
+         console.log(jsonToString2)
+
+         document.write('<hr />')
+
+         // 문자열 -> JSON 바꾸기
+         const iPhone15_2 = '{"model":"iPhone 15","manufacturer":"Apple","releaseYear":2023,"colors":["Black","Blue","Pink","Yellow","Green"]}' // 문자열로 바꾸기로 나온 문자열
+
+         const stringToJson = JSON.parse(iPhone15_2) // json 형식으로 다시 바꿈
+         document.write(stringToJson) // 출력하면 처음으로 돌아와있음
+         console.log(stringToJson)
+      </script>
+   </body>
+</html>
