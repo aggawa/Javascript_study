@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h1 class="title" id="title">HEADERS</h1>
+      <script>
+         // querySelector는 하나의 요소만 가지고 온다. 선택자는 css와 동일하게 사용
+
+         //  const header = document.querySelector('.title')
+         const header = document.querySelector('#title')
+         console.log(header)
+
+         /*
+         h1{
+            colo: white;
+            background-color: black;
+            padding: 10px;
+        }
+         */
+
+         // style.css속성명 = '속성값'
+         // 이때 속성명은 카멜표기법으로 해야한다. ex) background-color -> backgroundColor
+         // 속성값은 반드시 문자열 혹은 숫자형으로 사용해야 한다.
+         header.style.color = 'white'
+         header.style.backgroundColor = 'black'
+         header.style.padding = '10px' // 이런식으로 script에서도 css를 설정할 수 있다.
+      </script>
+   </body>
+</html>

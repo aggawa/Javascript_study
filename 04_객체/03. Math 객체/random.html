@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 1 ~ 10 사이의 랜덤한 정수
+         var random = Math.floor(Math.random() * (10 - 1 + 1)) + 1
+         // (Math.floor(Math.random() * (최대값 - 최솟값 + 1)) + 최솟값;
+         // var random = Math.floor(Math.random() * (100 - 50 + 1)) + 50
+         // ↑ 이렇게 하면 50 ~ 100 까지 랜덤수 출력 이란 것임 ㅇㅇ
+
+         document.write(random, '<br>')
+      </script>
+   </body>
+</html>
