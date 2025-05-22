@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <style>
+         h1 {
+            user-select: none;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>클릭 횟수: 0</h1>
+      <script>
+         let counter = 0
+         const h1 = document.querySelector('h1')
+
+         // 클릭 이벤트 적용 / 콜백: 클릭시 발생하는 이벤트를 쓴다
+         h1.addEventListener('click', () => {
+            counter++ // 클릭시 카운터 중가
+            h1.textContent = `클릭 횟수:${counter}` // textContent로 문자열 자체를 바꾸는것이지만 클릭시 수가 늘어나는 거로 보임
+         })
+      </script>
+   </body>
+</html>

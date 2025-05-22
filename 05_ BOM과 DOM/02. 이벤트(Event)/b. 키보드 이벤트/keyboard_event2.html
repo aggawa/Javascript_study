@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 문서 전체에 이벤트를 건다.
+         document.addEventListener('keydown', (event) => {
+            console.log(event) // 이벤트 객체: 발생한 이벤트에 대한 정보를 가지고있음
+
+            console.log('altkey:', event.altKey) // alt키를 누르면 true
+            console.log('ctrkey:', event.ctrlKey) // ctrl키를 누르면 true
+            console.log('shiftkey:', event.shiftKey) // shift키를 누르면 true
+            console.log('code', event.code) // 내가 누른 코드를 보여줌 (자세히)
+            console.log('key', event.key) // 내가 누른 키를 보여줌 (대충)
+         })
+      </script>
+   </body>
+</html>

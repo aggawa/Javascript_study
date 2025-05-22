@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <input type="text" />
+      <p></p>
+
+      <script>
+         const input = document.querySelector('input')
+         const p = document.querySelector('p')
+
+         // 이메일인지 아닌지 판단하는 함수
+         const isEmail = (value) => {
+            // @를 가지고있고 뒤에 .이 있으면 이메일 형식
+            // ex) test@googlo.com  =>  ['test', 'google.com']
+            return value.indexOf('@') >= 1 && value.split('@')[1].indexOf('.') >= 1
+            // 골뱅이는 무조건 가지고 있고 앞에는 id가 있으므로 value.indexOf('@')적용시 무조건 1이상이 나온다. &&
+            // split으로 @앞으로 쫙 지우고 나머지 줄게서 . 을 찾음
+            // 두 조건이 모두 참이면 이메일 형식임
+         }
+         input.addEventListener('keyup', (event) => {
+            const value = event.target.value
+
+            if (isEmail(value)) {
+               p.style.color = 'green'
+               p.textContent = `이메일 형식입니다: ${value}`
+            } else {
+               p.style.color = 'red'
+               p.textContent = `이메일 형식이 아닙니다: ${value}`
+            }
+         })
+      </script>
+   </body>
+</html>

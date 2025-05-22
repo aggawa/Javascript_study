@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <select>
+         <option value="fool1">떡볶이</option>
+         <option value="fool2">순대</option>
+         <option value="fool3">오뎅</option>
+         <option value="fool4">튀김</option>
+      </select>
+
+      <p>선택:</p>
+
+      <script>
+         const select = document.querySelector('select')
+         const p = document.querySelector('p')
+
+         // select, radio, checkbox 에서 사용
+         // 선택 되었을 때 이벤트가 발생한다.
+         select.addEventListener('change', (e) => {
+            const options = e.currentTarget.options
+            // 전체 option 요소를 배열형태로 가져옴
+            console.log(options) // 확인용
+
+            const index = e.currentTarget.options.selectedIndex
+            // option 배열에서 선택한 인덱스 번호를 가져옴
+            console.log(index) // 확인용
+
+            p.textContent = `선택: ${options[index].textContent}`
+            // options[index]: 현재 선택한 옵션 요소를 가져옴
+            // 요소.textContent: 요소 뒤에 붙으면 그 요소를 text로 내보냄
+
+            // 옵션의 value 값 읽어오기
+            const selectedFood1 = event.currentTarget.value
+            console.log(selectedFood1)
+
+            // 옵션의 value 값 읽어오기 2
+            const selectedFood2 = event.target.value
+            console.log(selectedFood2)
+         })
+      </script>
+   </body>
+</html>

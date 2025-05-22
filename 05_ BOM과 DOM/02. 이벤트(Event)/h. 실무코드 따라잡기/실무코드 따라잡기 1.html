@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <input type="text" />inch<br />
+      <button>계산</button>
+      <p></p>
+
+      <script>
+         // inch => cm 변환 코드 만들기
+
+         const input = document.querySelector('input')
+         const button = document.querySelector('button')
+         const p = document.querySelector('p')
+
+         button.addEventListener('click', () => {
+            const inch = Number(input.value) // input창에 입력된 값 가져와 inch에 저장
+            // 문자 타입으로 받기 때문에 숫자타입으로 받는 Number함수 사용
+
+            // 숫자가 아닐 경우 출력
+            if (isNaN(inch)) {
+               p.textContent = '숫자를 입력해주세요.'
+               return // 함수 종료
+            }
+
+            // 변환해서 출력
+            const cm = inch * 2.54 // 21번줄에 inch에 저장된 값으로 계산 후 cm에 저장
+            p.textContent = `${cm}`
+         })
+      </script>
+   </body>
+</html>
