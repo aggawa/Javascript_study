@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 1. 문자열 저장, 불러오기
+         // F12 - 애플리케이션 - 로컬 스토리지 - 하위 옵션
+         // (key, value)로 구성
+
+         // 저장
+         localStorage.setItem('username', '준모')
+         localStorage.setItem('job', '개백수')
+
+         // 불러오기
+         const name = localStorage.getItem('username')
+         const job = localStorage.getItem('job')
+         // key를 이용하여 불러오기
+         console.log(name)
+         console.log(job)
+         // 출력
+
+         // 삭제
+         localStorage.removeItem('job')
+
+         // 전체 삭제
+         localStorage.clear()
+      </script>
+   </body>
+</html>

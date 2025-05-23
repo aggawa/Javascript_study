@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const me = {
+            name: '전준모',
+            age: 25,
+            hobby: ['농구', '일렉'],
+            introduce: function () {
+               return `안녕하십니까 이름은 ${this.name}이고 나이는 ${this.age}살이에요.`
+            },
+            want: function () {
+               return `잘부탁드려요 열심히 하겠습니다 감사합니다,,`
+            },
+         }
+
+         document.write(me.introduce())
+         document.write(`<br/>`)
+         document.write(me.want())
+      </script>
+   </body>
+</html>
