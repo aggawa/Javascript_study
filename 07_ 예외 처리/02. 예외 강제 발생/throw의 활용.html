@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 계좌에서 돈을 인출할때 잔고가 없을 시 예외처리
+
+         let deposit = 10000 // 잔고
+
+         // 계좌에서 돈을 인출하는 함수
+         function withdrawal(money) {
+            // 매개변수 money는 인출할 돈
+            if (deposit < money) {
+               // 인출할 돈보다 잔고가 적으면 실행
+               throw new Error('잔고가 부족합니다.')
+            }
+
+            // 잔고가 충분할 시
+            deposit -= money // deposit = deposit - money
+         }
+
+         try {
+            withdrawal(5000)
+            withdrawal(11000) // 예외가 발생하는 위치
+            console.log(`${deposit}원 남았습니다.`) // 예외 발생시 실행하지 않고 catch로 감
+         } catch (error) {
+            console.log('에러가 발생했습니다.', error.message)
+         }
+      </script>
+   </body>
+</html>

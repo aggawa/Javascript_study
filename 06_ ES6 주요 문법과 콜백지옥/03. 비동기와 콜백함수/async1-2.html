@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 비동기 사례
+         //  console.log('Hello')
+
+         //  setTimeout(function () {
+         //     console.log('Bye')
+         //  }, 3000)
+
+         //  console.log('Hello Agn')
+         // 출력결과 Hello \n Hello Agn \n Bye  즉 순차적으로 실행되지 않음
+
+         // 비동기를 동기로 바꾸는 법 -> 콜백함수
+         function sayGoodbye(callback) {
+            setTimeout(function () {
+               console.log('Bye')
+               callback()
+            }, 3000)
+         }
+
+         console.log('Hello')
+
+         sayGoodbye(function () {
+            console.log('Hello Agn')
+         })
+
+         // 이 녀석이 동기적인 부분과 상관 없다는 것임
+         console.log('haha')
+         // sayGoodbye가 동기가 됐다는거지 전체가 다 동기적으로 됐다는것이 아님
+      </script>
+   </body>
+</html>
