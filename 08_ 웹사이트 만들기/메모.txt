@@ -1,0 +1,4 @@
+index는 메인 화면, detail은 클릭시 디테일한 화면
+
+style.css, bootstrap, fontawesome 삽입
+
