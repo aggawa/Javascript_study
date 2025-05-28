@@ -2,3 +2,41 @@ index는 메인 화면, detail은 클릭시 디테일한 화면
 
 style.css, bootstrap, fontawesome 삽입
 
+
+
+row와 col
+12 grid를 만드는 것임 눈에 최적화 뭐시기,,,
+
+<div class="row">
+    <div class="col-sm-3">1</div>
+    <div class="col-sm-3">2</div>
+    <div class="col-sm-3">3</div>
+    <div class="col-sm-3">4</div>
+</div>
+여기서 col-sm-3 인 이유는 3인 div 4개가 모여서 12를 만들기 때문
+만약 div가 2개라면 col-sm-6 을 하면 합쳐서 12가 만들어지겠죵
+
+p-3 <- 이것은 사이즈를 말하는 것이여
+0 - 0
+1 - 0.25rem
+2 - 0.5rem
+3 - 1rem <- 이런식으로 정해진 사이즈가 있음
+외울필요까지는 없고 생각나면 보쟈 (ppt - 18page에 있음)
+
+툴이 만들어졌다면 서버에서 데이터를 가져와 채우기
+
+html 파일에 js파일 삽입
+body의 위에 script:src를 사용해 삽입
+콘솔창을 통해 확인한다.
+
+rowHtml - '<div class='row'>0, 1, 2, 3</div>' -> 이런식으로 반복하면
+
+rowsHtml - '<div class='row'>0, 1, 2, 3</div>' -> 이런식으로 쌓임
+'<div class='row'>4, 5, 6, 7</div>'
+'<div class='row'>8, 9, 10, 11</div>'
+'<div class='row'>12, 13, 14, 15</div>'
+'<div class='row'>16, 17, 18, 19</div>'
+
+rowHtml += `${index}` <- 요거는 잘 만들어졌는지 보여주기식 인덱스 번호 추출이고
+    수정하면 인덱스 번호에 차례대로 원하는 데이터가 쌓임
+
