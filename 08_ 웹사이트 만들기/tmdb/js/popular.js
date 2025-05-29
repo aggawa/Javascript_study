@@ -6,40 +6,38 @@ const options = {
    },
 }
 
-const url = 'https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1&region=KR'
+const url = 'https://api.themoviedb.org/3/discover/tv?language=ko-KR&page=3&with_original_language=ko'
 
-const getPlayingMovies = async (url) => {
+const getPopularMovies = async (url) => {
    try {
       const res = await fetch(url, options)
       const data = await res.json()
 
       const results = data.results
-      //   console.log(results)
 
       const container = document.querySelector('main .container')
       let rowsHtml = '' // 모든 row를 담을 변수
 
-      // card 5행 4열
-      // results.length = 20
-      for (let i = 0; i < results.length; i += 4) {
+      // card 10행 2열
+      for (let i = 0; i < results.length; i += 2) {
          let rowHtml = '<div class="row">' // 하나의 row를 담을 변수
 
-         for (let j = 0; j < 4; j++) {
+         for (let j = 0; j < 2; j++) {
             const index = i + j
             // if (index >= results.length) break //results 배열을 벗어나면 중단
 
-            const movie = results[index]
-            // console.log(movie)
+            const tv = results[index]
 
             rowHtml += `
-                <div class="col-sm-3 p-3">
+                <div class="col-sm-4 p-3">
                      <div class="card">
-                        <a href="./detail.html?movie_id=${movie.id}">
-                           <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top poster" alt="${movie.title}" />
+                        <a href="./detail.html?movie_id=${tv.id}" >
+                           <img src="https://image.tmdb.org/t/p/w500${tv.poster_path}" class="card-img-top poster" alt="${tv.name}" />
                         </a>
                         <div class="card-body">
-                           <p class="card-text title">${movie.title}</p>
-                           <p class="card-text average">${Number(movie.vote_average) === 0 ? '미반영' : movie.vote_average.toFixed(1) + '점'}</p>
+                           <p class="card-text title">${tv.name}</p>
+                           <p class="card-text average">${Number(tv.vote_average) === 0 ? '미반영' : tv.vote_average.toFixed(1) + '점'}</p>
+                           <p class="card-text overview ellipsis">${tv.overview}</p>
                         </div>
                      </div>
                 </div>
@@ -56,4 +54,4 @@ const getPlayingMovies = async (url) => {
    }
 }
 
-getPlayingMovies(url)
+getPopularMovies(url)

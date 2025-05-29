@@ -31,3 +31,61 @@ footer {
 main .container {
    padding: 40px 0;
 }
+
+/* card height 안 맞는 부분 수정 */
+main .container .row .card {
+   height: 100%;
+} /* 부트스트렙에서 고정되어있는 값이 있어서 100%로 하면 된다. */
+
+main .container .row .card a {
+   height: 80%;
+}
+
+main .container .row .card img {
+   height: 100%;
+   object-fit: cover; /* 이미지를 높이에 맞추고 너비는 자동으로 조절 (이미지 비율을 살리면서 전체적으로 커버) */
+}
+
+/* detail.html */
+
+main .container .movie-detail > ul.movie-info,
+p {
+   margin-bottom: 10px !important;
+}
+
+main .container ul.movie-info {
+   display: flex;
+}
+
+main .container ul.movie-info li {
+   padding-right: 13px;
+}
+
+/* 반응형 UI 문제 해결 */
+
+/* 576px ~ 767px */
+@media (min-width: 576px) and (max-width: 767px) {
+   /* 상세 페이지 포스터가 작아지는 문제 해결 */
+   .col-sm-9 {
+      width: 60%;
+   }
+   .col-sm-3 {
+      width: 40%;
+   }
+
+   /* 상세페이지 글자가 두줄이 되는 문제 해결 */
+   main .container ul.movie-info {
+      display: initial; /* flex 해제 */
+   }
+   main .container ul.movie-info li {
+      padding-bottom: 10px;
+   }
+}
+
+/* 말줄임표 */
+.ellipsis {
+   width: 80%;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}

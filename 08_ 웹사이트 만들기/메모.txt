@@ -40,3 +40,17 @@ rowsHtml - '<div class='row'>0, 1, 2, 3</div>' -> 이런식으로 쌓임
 rowHtml += `${index}` <- 요거는 잘 만들어졌는지 보여주기식 인덱스 번호 추출이고
     수정하면 인덱스 번호에 차례대로 원하는 데이터가 쌓임
 
+
+detail은 페이지가 하나인데 데이터가 어떻게 다를까
+영화의 id로 구분하여 클릭시 클릭한 id의 데이터가 넘어온다.
+그래서 한 페이지로 각각 다른 데이터가 출력되는것이 가능 한 것이다.
+
+# 오류
+간헐적으로 배우 정보가 위에 나타나는 현상은?
+비동기 통신이 원인이다.
+getCreditsMovie(movieCreditsUrl) 를 지우고
+getDetailMovie 안에 삽입한다. -> await getCreditsMovie(movieCreditsUrl)
+getCreditsMovie는 비동기 함수임으로 await 붙여주는거 중요
+그러면 getDetailMovie가 실행되고 난 후 getCreditsMovie가 실행된다.
+
+백앤드의 동기, 비동기는 고급 스킬이니 잘 공부해보쟈 아자아자
