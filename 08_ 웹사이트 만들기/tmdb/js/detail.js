@@ -13,12 +13,17 @@ const movieId = urlParams.get('movie_id')
 const movieDetailUrl = `https://api.themoviedb.org/3/movie/${movieId}?language=ko-KR`
 const mainContainer = document.querySelector('main .container')
 
+console.log(movieDetailUrl)
+
 // 1. 영화 상세정보 바인딩
 
 const getDetailMovie = async (movieDetailUrl) => {
    try {
       const response = await fetch(movieDetailUrl, options)
       const data = await response.json()
+
+      console.log(response)
+      console.log(data)
 
       const imgSrc = `https://image.tmdb.org/t/p/w300${data.poster_path}`
 

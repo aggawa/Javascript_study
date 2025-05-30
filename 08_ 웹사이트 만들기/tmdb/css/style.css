@@ -46,6 +46,22 @@ main .container .row .card img {
    object-fit: cover; /* 이미지를 높이에 맞추고 너비는 자동으로 조절 (이미지 비율을 살리면서 전체적으로 커버) */
 }
 
+/* popular */
+main .container .row .popular-card {
+   display: inline;
+   border: none;
+}
+
+main .container .row .card .card-body1 {
+   width: 38%;
+   float: left;
+}
+main .container .row .card .card-body2 {
+   width: 58%;
+   float: right;
+   padding-top: 3rem;
+}
+
 /* detail.html */
 
 main .container .movie-detail > ul.movie-info,
