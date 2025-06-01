@@ -8,9 +8,9 @@ const options = {
 
 /* 쿼리 스트링 값 가져오기 */
 const urlParams = new URLSearchParams(location.search)
-const tvId = urlParams.get('tv_id')
+const tvId = urlParams.get('movie_id')
 
-const tvDetailUrl = `https://api.themoviedb.org/3/tv/${tvId}?language=ko-KR`
+const tvDetailUrl = `https://api.themoviedb.org/3/movie/${tvId}?language=ko-KR&page=4`
 const mainContainer = document.querySelector('main .container')
 
 console.log(tvDetailUrl)
@@ -21,11 +21,36 @@ const getDetailTv = async (tvDetailUrl) => {
       const response = await fetch(tvDetailUrl, options)
       const data = await response.json()
 
-      const results = data.results
+      const results = data.response
 
       console.log(response)
       console.log(data)
       console.log(results)
+
+      const imgSrc = `https://image.tmdb.org/t/p/w300${data.poster_path}`
+
+      const rowHtml = `
+                <div class="row rowbox">
+                   <div class="col-sm-3 p-3">
+                      <img src="${imgSrc}" alt="${data.title}" class="poster-detail" />
+                   </div>
+                   <div class="col-sm-9 p-3">
+                      <h3>${data.title}</h3>
+                      <ul class="popular-info">
+                         <li>${data.original_title}</li>
+                         <li>평점 ${Number(data.vote_average) === 0 ? '미반영' : data.vote_average.toFixed(1)}</li>
+                         <li>인기도: ${data.popularity}</li>
+                         <li>개봉일: ${data.release_date}</li>
+                      </ul>
+                      <p>${data.overview}</p>
+                   </div>
+                </div>
+                <div class="row rowbox">
+                   <a href="#">>>${data.title} 보러가기<<</a>
+                </div>
+      `
+
+      mainContainer.innerHTML += rowHtml
    } catch (error) {
       console.log('에러 발생:', error)
    }
