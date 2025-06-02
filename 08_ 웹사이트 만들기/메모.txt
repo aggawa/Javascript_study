@@ -54,3 +54,16 @@ getCreditsMovie는 비동기 함수임으로 await 붙여주는거 중요
 그러면 getDetailMovie가 실행되고 난 후 getCreditsMovie가 실행된다.
 
 백앤드의 동기, 비동기는 고급 스킬이니 잘 공부해보쟈 아자아자
+
+
+
+메모 키값
+const options = {
+   method: 'GET',
+   headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTM2ZTQyM2M0YWFlMTYzMmQ0YjFlNGIzZTJlOWNiMSIsIm5iZiI6MTc0ODM5NDQxOC4xMDMwMDAyLCJzdWIiOiI2ODM2NjFiMjczZmMzYTA5MzliNmMxNTYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.ucheBgocAmg6CWVxsqHoTvLCsr80K0mPxDzlKGoVyrk',
+   },
+
+여기에 그 Authorization 이거가 내걸 써야함
+다시해보센 ㅇㅇㅇ

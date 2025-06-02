@@ -2,11 +2,11 @@ const options = {
    method: 'GET',
    headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTM2ZTQyM2M0YWFlMTYzMmQ0YjFlNGIzZTJlOWNiMSIsIm5iZiI6MTc0ODM5NDQxOC4xMDMwMDAyLCJzdWIiOiI2ODM2NjFiMjczZmMzYTA5MzliNmMxNTYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.ucheBgocAmg6CWVxsqHoTvLCsr80K0mPxDzlKGoVyrk',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZDI5ZmIzYTNiOGFkZjkzYzNkNTQxNDU4OTczNzA0OSIsIm5iZiI6MTY0OTIzMDY1Ny42NDEsInN1YiI6IjYyNGQ0MzQxYzM5MjY2MDA0ZjkyOThiZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2VBrTVt3_4sbUJY1WztwmFvsSQJCkIaUZFESj21wNDA',
    },
 }
 
-const url = `https://api.themoviedb.org/3/tv/popular?language=ko-KR&page=1`
+const url = `https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=4`
 
 console.log(url)
 
@@ -44,7 +44,7 @@ const getPopularTv = async (url) => {
                            </a>
                         </div>
                         <div class="card-body2">
-                           <p class="card-text title">${tv.name}</p>
+                           <p class="card-text title">${tv.title}</p>
                            <p class="card-text average">${Number(tv.vote_average) === 0 ? '미반영' : tv.vote_average.toFixed(1) + '점'}</p>
                            <p class="card-text overview ellipsis">${tv.overview}</p>
                         </div>
