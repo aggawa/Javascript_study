@@ -10,10 +10,14 @@ const options = {
 const urlParams = new URLSearchParams(location.search)
 const movieId = urlParams.get('movie_id')
 
+console.log(urlParams)
+console.log(movieId)
+
 const movieDetailUrl = `https://api.themoviedb.org/3/movie/${movieId}?language=ko-KR`
 const mainContainer = document.querySelector('main .container')
 
 console.log(movieDetailUrl)
+console.log(mainContainer)
 
 // 1. 영화 상세정보 바인딩
 

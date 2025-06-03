@@ -6,7 +6,7 @@ const options = {
    },
 }
 
-const url = `https://api.themoviedb.org/3/tv/popular?language=ko-KR&page=1`
+const url = `https://api.themoviedb.org/3/discover/tv?language=ko-KR&page=3&with_original_language=ko`
 
 console.log(url)
 
@@ -39,7 +39,7 @@ const getPopularTv = async (url) => {
                 <div class="col-sm-6 p-3">
                      <div class="card popular-card" style="">
                         <div class="card-body1">
-                           <a href="./popular_detail.html?movie_id=${tv.id}" >
+                           <a href="./popular_detail.html?series_id=${tv.id}" >
                               <img src="https://image.tmdb.org/t/p/w500${tv.poster_path}" class="card-img-top poster" alt="${tv.title}" />
                            </a>
                         </div>
