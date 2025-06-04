@@ -6,7 +6,7 @@ const options = {
    },
 }
 
-const url = `https://api.themoviedb.org/3/discover/tv?language=ko-KR&page=3&with_original_language=ko`
+const url = `https://api.themoviedb.org/3/tv/popular?language=ko-KR&page=3&with_original_language=ko`
 
 console.log(url)
 
