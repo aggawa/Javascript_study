@@ -90,9 +90,11 @@ main .container ul.movie-info li {
    }
 
    /* 상세페이지 글자가 두줄이 되는 문제 해결 */
+   main .container ul.movie-info,
    main .container ul.movie-info {
       display: initial; /* flex 해제 */
    }
+   main .container ul.movie-info li,
    main .container ul.movie-info li {
       padding-bottom: 10px;
    }

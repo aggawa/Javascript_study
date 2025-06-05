@@ -34,7 +34,7 @@ const getDetailTv = async (tvDetailUrl) => {
       const rowHtml = `
                 <div class="row rowbox">
                    <div class="col-sm-3 p-3">
-                      <img src="${imgSrc}" alt="${data.name}" class="poster-detail" />
+                      <img src="${imgSrc}" alt="${data.name}" class="poster-detail" style="max-width:100%"/>
                    </div>
                    <div class="col-sm-9 p-3">
                       <h3>${data.name}</h3>
@@ -47,15 +47,12 @@ const getDetailTv = async (tvDetailUrl) => {
                       <p>줄거리: ${data.overview}</p>
                    </div>
                 </div>
-                <div class="row rowbox">
-                   <a href="#">>>${data.seasons[0].name} 보러가기<<</a>
-                   <a href="#">>>${data.seasons[1].name} 보러가기<<</a>
-                   <a href="#">>>${data.seasons[2].name} 보러가기<<</a>
-                </div>
       `
 
       // 두번째 시리즈 정보를 담은 큰 div 수정하기 / UI도 보기좋게 수정
       mainContainer.innerHTML += rowHtml
+
+      await getSeasonsTv(tvSeasonsUrl)
    } catch (error) {
       console.log('에러 발생:', error)
    }
@@ -64,3 +61,37 @@ const getDetailTv = async (tvDetailUrl) => {
 getDetailTv(tvDetailUrl)
 
 // 시즌 바인딩
+
+const tvSeasonsUrl = `https://api.themoviedb.org/3/tv/${seriesId}/season/season_number?language=ko-KR&page=3&with_original_language=ko`
+
+const getSeasonsTv = async (tvSeasonsUrl) => {
+   try {
+      const response = await fetch(tvSeasonsUrl, options)
+      const data = await response.json()
+
+      console.log(response)
+      console.log(data)
+
+      let castRowHtml = `<div class="row" style="margin-top:30px">`
+
+      for (let i = 0; i < data.episodes.length; i++) {
+         if (i === 5) break
+
+         castRowHtml += `
+         <div class='col-sm-12 p-3'>
+            <div class='card' style='text-align:center'>
+               <a>   
+                  <p class='card-text'>>>>${data.episodes[i].name} 보러가기 / ${data.episodes[i].air_date === null ? '방영 정보 없음' : (data.episodes[i].air_date += '방영')}<<<</p>
+               </a>
+            </div>
+         </div>
+         `
+      }
+
+      castRowHtml += `</div>`
+
+      mainContainer.innerHTML += castRowHtml
+   } catch (error) {
+      console.log('에러 발생:', error)
+   }
+}
